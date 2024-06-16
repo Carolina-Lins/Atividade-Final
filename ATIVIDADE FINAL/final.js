@@ -82,6 +82,17 @@ nota3Input.style.padding = '5px';
 nota3Input.style.margin = 'auto';
 div.appendChild(nota3Input);
 
+const submitButton = document.createElement('button')
+submitButton.style.width = '50%';
+submitButton.style.display = 'block';
+submitButton.style.marginTop = '20px';
+submitButton.style.padding = '5px';
+submitButton.style.margin = 'auto';
+submitButton.style.backgroundColor = 'white';
+submitButton.style.color = 'black';
+submitButton.textContent = 'Clique para calcular sua média';
+div.appendChild(submitButton)
+
 const resultado = document.createElement('p');
 resultado.style.width = '50%';
 resultado.style.height = '10px'
@@ -93,17 +104,13 @@ resultado.style.textAlign = 'center';
 resultado.style.backgroundColor = 'white';
 div.appendChild(resultado);
 
-
-const botao = document.createElement(`button`);
-botao.textContent = `Clique para calcular sua média`;
-div.appendChild(botao);
-SubmitEvent.addEventListener('click', () => {
+submitButton.addEventListener('click', () => {
     const nt1 = parseFloat(nota1Input.value);
     const nt2 = parseFloat(nota2Input.value);
     const nt3 = parseFloat(nota3Input.value);
     const media = (nt1 + nt2 + nt3) / 3;
 
-    resultado.textContent = `Bem-vindo, ${nomeInput}, sua média é, ${media}`
+    resultado.textContent = `Bem-vindo, ${nomeInput.value}, sua média é, ${media}`
 })
 
 const rodape = document.createElement('footer');
